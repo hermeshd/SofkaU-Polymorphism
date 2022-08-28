@@ -1,11 +1,15 @@
 
 public class Unmanned extends Spacecraft {
 
-    public int combustible = 100;
+    Unmanned(String name, String originCountry, String combustible) {
+        this.name = name;
+        this.countryOfOrigin = originCountry;
+        this.combustible = combustible;
+    }
     
     @Override
     public void propulse() {
-        this.combustible = combustible - 10;
+       
         System.out.println("Turning on the ion thrusters");
         System.out.println("Fuel left (energy): " + 90);
     }

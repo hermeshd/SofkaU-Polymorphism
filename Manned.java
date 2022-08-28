@@ -2,11 +2,15 @@
 public class Manned extends Spacecraft {
     
     
-    public int combustible = 100;
+    Manned(String name, String originCountry, String combustible) {
+        this.name = name;
+        this.countryOfOrigin = originCountry;
+        this.combustible = combustible;
+    }
 
     @Override
     public void propulse() {
-        this.combustible = combustible - 10;
+        
         System.out.println("Used some cold gas to manuever the ship!");
         System.out.println("Fuel left (RCS): " + combustible);
     }

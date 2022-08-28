@@ -1,43 +1,29 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Assignment {
 
-    public static ArrayList<Shuttle> spaceships = new ArrayList<>();
-    public static String selection;
+        private static String selection;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         
         Scanner input = new Scanner(System.in);
-       
-        while (selection != "4") {
-            System.out.println("Enter the desired type of spacecraft: "
-                            +   "\n1. Shuttle"
-                            +   "\n2. Manned"
-                            +   "\n3. Unmanned"
+
+        System.out.println("Select action: "
+                            +   "\n1. Add spacecrafts"
+                            +   "\n2. See stored spacecrafts"
+                            +   "\n3. Interact with stored spacecrafts"
                             +   "\n4. Exit");
             selection = input.nextLine();
-            
+       
+        while (selection != "4") {
+
             switch (selection) {
-
-                case "1":
-                    System.out.println("Enter name: ");
-                    String name = input.nextLine();
-                    System.out.println("Enter country: ");
-                    String country = input.nextLine();
-                    System.out.println("Enter combustible: ");
-                    String combustible = input.nextLine();
-
-                    Shuttle shuttle = new Shuttle(name, country, combustible);
-                    spaceships.add(shuttle);
+                case "1": 
+                    AddSpacecrafts addSpacecrafts = new AddSpacecrafts();
+                    addSpacecrafts.addSpacecrafts();
                     break;
-                case "4":
-                    System.exit(0);
-                case "5":
-                    System.out.println(((Shuttle) spaceships.get(0)).name);
-                    break;
-            }
+                }
         }
 
     }
