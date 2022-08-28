@@ -1,64 +1,50 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+//Necessary utilities for the program to work
 
 public class AddSpacecrafts {
 
     private static String selection;
-    public static ArrayList<Shuttle> shuttleList = new ArrayList<>();
-    public static ArrayList<Manned> mannedList = new ArrayList<>();
-    public static ArrayList<Unmanned> unmannedList = new ArrayList<>();
+    public static ArrayList<Spacecraft> spacecraftList = new ArrayList<>(); //List of all the spacecrafts stored in the program
+    
     Scanner input = new Scanner(System.in);
 
+    //Method to add spacecrafts depending on user input
     public void addSpacecrafts() {
 
+        //Ask the user for the type of spacecraft to add
         System.out.println("Enter the desired type of spacecraft: "
                             +   "\n1. Shuttle"
                             +   "\n2. Manned"
                             +   "\n3. Unmanned"
                             +   "\n4. Exit");
         selection = input.nextLine();
+
+        //User selection menu
+        System.out.println("Enter name of the spacecraft: ");
+            String name = input.nextLine();
+        System.out.println("Enter country or origin: ");
+            String country = input.nextLine();
+        System.out.println("Enter propellant type: ");
+            String propellant = input.nextLine();
             
+        //Evaluate user selection and add spacecraft according to the type
         switch (selection) {
 
             case "1":
-                System.out.println("Enter name: ");
-                String sName = input.nextLine();
-                System.out.println("Enter country: ");
-                String sCountry = input.nextLine();
-                System.out.println("Enter combustible: ");
-                String sCombustible = input.nextLine();
-
-                Shuttle shuttle = new Shuttle(sName, sCountry, sCombustible);
-                shuttleList.add(shuttle);
+                spacecraftList.add(new Shuttle(name, country, propellant));
                 break;
             case "2":
-                System.out.println("Enter name: ");
-                String mName = input.nextLine();
-                System.out.println("Enter country: ");
-                String mCountry = input.nextLine();
-                System.out.println("Enter combustible: ");
-                String mCombustible = input.nextLine();
-
-                Manned manned = new Manned(mName, mCountry, mCombustible);
-                mannedList.add(manned);
+                spacecraftList.add(new Manned(name, country, propellant));
                 break;
             case "3":
-                System.out.println("Enter name: ");
-                String uName = input.nextLine();
-                System.out.println("Enter country: ");
-                String uCountry = input.nextLine();
-                System.out.println("Enter combustible: ");
-                String uCombustible = input.nextLine();
-
-                Unmanned unmanned = new Unmanned(uName, uCountry, uCombustible);
-                unmannedList.add(unmanned);
+                spacecraftList.add(new Unmanned(name, country, propellant));
                 break;
             case "4":
                 System.exit(0);
-            case "5":
-                System.out.println(shuttleList);
-                // System.out.println(((Shuttle) shuttleList.get(0)).name);
                 break;
+            default:
+                System.out.println("Invalid option");
         }
     }
 }

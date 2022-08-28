@@ -4,7 +4,7 @@ public abstract class Spacecraft {
     
     public String name;
     public String countryOfOrigin;
-    public String combustible;
+    public String propellant;
 
     public abstract void propulse();
 
