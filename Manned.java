@@ -1,4 +1,6 @@
 public class Manned extends Spacecraft {
+
+    private int propellantAmount = 100;
     
     Manned(String name, String originCountry, String propellant) {
         this.name = name;
@@ -17,34 +19,18 @@ public class Manned extends Spacecraft {
 
     @Override
     public void propulse() {
-        
         System.out.println("Used some cold gas to manuever the ship!");
-        System.out.println("Fuel left (RCS): " + propellant);
+        System.out.println("Fuel left (RCS): " + (propellantAmount - 10));
     }
 
     @Override
-    public void landing() {
-        
+    public void landing() throws InterruptedException {
+        System.out.println("Deploying drogue parachute ...");
+        Thread.sleep(1500);
+        System.out.println("Deploying landing legs as the spacecraft approaches the ground ...");
+        Thread.sleep(1500);
+        System.out.println("Deploying main parachute and bracing for landing/splashdown ...");
+        Thread.sleep(1500);
+        System.out.println("Touchdown! Now the people on board are waiting for the recovery team to pick them up!");
     }
-
-    // public void landing() throws InterruptedException {
-    //     System.out.println("Opening up parachute...");
-    //     Thread.sleep(1000);
-    //     System.out.println("Bracing for impact on the ocean...");
-    //     Thread.sleep(1000);
-    //     System.out.println("Splashdown and now waiting for recovery team!");
-    // }
-
-    // public void landing(String method) throws InterruptedException {
-        
-    //     if (method == "powered") {
-    //         System.out.println("Opening up drogue parachute...");
-    //         Thread.sleep(1000);
-    //         System.out.println("Performing suicide burn...");
-    //         Thread.sleep(1000);
-    //         System.out.println("Deploying landing legs ...");
-    //         Thread.sleep(1000);
-    //         System.out.println("Touchdown and now waiting for recovery team!!");
-    //     }
-    //}
 }

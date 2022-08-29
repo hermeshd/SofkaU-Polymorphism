@@ -1,5 +1,7 @@
 public class Unmanned extends Spacecraft {
 
+    private int propellantAmount = 100;
+
     Unmanned(String name, String originCountry, String propellant) {
         this.name = name;
         this.countryOfOrigin = originCountry;
@@ -17,12 +19,11 @@ public class Unmanned extends Spacecraft {
 
     @Override
     public void propulse() {
-       
-        System.out.println("Turning on the ion thrusters");
-        System.out.println("Fuel left (energy): " + 90);
+        System.out.println("Turning on the ion thrusters and adjusting orbit");
+        System.out.println("Fuel left (energy): " + (propellantAmount - 10));
     }
     
     public void landing() {
-        System.out.println("Unmanned spacecraft don't really land :s (Unless it's a lander or a rover)");
+        System.out.println("Unmanned spacecrafts don't really land :s (Unless it's a lander or a rover)");
     }
 }

@@ -33,6 +33,10 @@ public class Assignment {
             case "3":                 
                 UseSpacecrafts.useSpacecrafts();
                 break;
+            case "4":                 
+                System.exit(0);
+                break;
         }
     } 
+    
 }
