@@ -1,4 +1,3 @@
-
 public class Unmanned extends Spacecraft {
 
     Unmanned(String name, String originCountry, String propellant) {
@@ -15,7 +14,6 @@ public class Unmanned extends Spacecraft {
         AddSpacecrafts.spacecraftList.add(sample2);
         AddSpacecrafts.spacecraftList.add(sample3);
     }
-
 
     @Override
     public void propulse() {

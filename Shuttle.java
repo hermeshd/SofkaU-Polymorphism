@@ -1,4 +1,3 @@
-
 public class Shuttle extends Spacecraft {
 
     Shuttle(String name, String originCountry, String propellant) {
@@ -16,18 +15,51 @@ public class Shuttle extends Spacecraft {
         AddSpacecrafts.spacecraftList.add(sample3);
     }
 
+    //Normal procedure of a shuttle-like launch
     @Override
-    public void propulse() {
-        // TODO Auto-generated method stub
-        
+    public void propulse() throws InterruptedException {
+        System.out.println("Starting countdown ...");
+        Thread.sleep(1000);
+        System.out.println("3...");
+        Thread.sleep(1000);
+        System.out.println("2...");
+        Thread.sleep(1000);
+        System.out.println("1...");
+        Thread.sleep(1000);
+        System.out.println("Liftoff!! Now the spacecraft proceeds to launch its payload to orbit and beyond!");
+        Thread.sleep(800);
+        System.out.println("Staging of the spacecraft takes place and the remains burn and disintegrate back down to Earth");
+    }
+
+    //This is for reusable shuttle-like spacecraft (Currently only the Falcon 9 rocket can do this)
+    public void propulse(String reusable) throws InterruptedException {
+        System.out.println("Starting countdown ...");
+        Thread.sleep(1000);
+        System.out.println("3...");
+        Thread.sleep(1000);
+        System.out.println("2...");
+        Thread.sleep(1000);
+        System.out.println("1...");
+        Thread.sleep(1000);
+        System.out.println("Liftoff!! Now the spacecraft proceeds to launch its payload to orbit and beyond!");
+        Thread.sleep(800);
+        System.out.println("Staging of the spacecraft takes place and the first stage turns around and executes the return burn");
+        Thread.sleep(800);
+        System.out.println("First stage starts falling back to earth and executes the re-entry burn");
+        Thread.sleep(800);
+        System.out.println("Now the first stage manuevers through the air and prepares for landing!");
     }
 
     @Override
-    public void landing() {
-        // TODO Auto-generated method stub
-        
+    public void landing() throws InterruptedException {
+        System.out.println("The atmospheric stage(s) of the spacecraft start(s) falling back to earth and what doesn't get burned or disintegrated, splashes down in the ocean");
     }
-    
 
-
+    public void landing(String reusable) throws InterruptedException {
+        System.out.println("The first stage slows down to terminal velocity and aims for the landing pad ...");
+        Thread.sleep(1000);
+        System.out.println("Landing burn starts and landing legs start deploying ...");
+        Thread.sleep(1000);
+        System.out.println("Touchdown! First stage lands safely in the landing pad and soon the recovery team will get to it!");
+    }
 }

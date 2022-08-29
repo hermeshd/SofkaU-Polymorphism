@@ -1,6 +1,4 @@
-
 public class Manned extends Spacecraft {
-    
     
     Manned(String name, String originCountry, String propellant) {
         this.name = name;
@@ -49,5 +47,4 @@ public class Manned extends Spacecraft {
     //         System.out.println("Touchdown and now waiting for recovery team!!");
     //     }
     //}
-
 }

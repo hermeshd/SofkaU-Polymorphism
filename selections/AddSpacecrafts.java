@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 public class AddSpacecrafts {
 
-    private static String selection;
     public static ArrayList<Spacecraft> spacecraftList = new ArrayList<>(); //List of all the spacecrafts stored in the program
     
-    Scanner input = new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
 
     //Method to add spacecrafts depending on user input
-    public void addSpacecrafts() {
+    public static void addSpacecrafts() {
 
         //Ask the user for the type of spacecraft to add
         System.out.println("Enter the desired type of spacecraft: "
@@ -18,7 +17,7 @@ public class AddSpacecrafts {
                             +   "\n2. Manned"
                             +   "\n3. Unmanned"
                             +   "\n4. Exit");
-        selection = input.nextLine();
+        String selection = input.nextLine();
 
         //User selection menu
         System.out.println("Enter name of the spacecraft: ");
