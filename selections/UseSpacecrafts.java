@@ -10,6 +10,26 @@ public class UseSpacecrafts {
 
         System.out.println("Type the index of the spacecraft you want to interact with: ");
         String selection = input.nextLine(); //User input to select one spacecraft to interact with
+        
+        //Check if the input option is valid
+        try {
+            if (Integer.parseInt(selection) > SeeSpacecrafts.getIndexCounter()) {
+                System.out.println("Invalid Option");
+                System.out.println("Press ENTER to continue...");
+                input.nextLine();
+                System.out.print("\033\143"); //Clear console
+                Assignment.main(null);
+            }
+        } 
+        
+        catch (NumberFormatException e) {
+            System.out.println("Invalid Option");
+                System.out.println("Press ENTER to continue...");
+                input.nextLine();
+                System.out.print("\033\143"); //Clear console
+                Assignment.main(null);
+        }
+
         System.out.print("\033\143"); //Clear console
         System.out.println("The spacecraft you selected is: " + AddSpacecrafts.spacecraftList.get(Integer.parseInt(selection)).name);
         System.out.println("\n"); //Confirm to the user the selected spacecraft
@@ -35,6 +55,7 @@ public class UseSpacecrafts {
         String action = input.nextLine(); //Getting user input
         System.out.print("\033\143"); //Clear console
         System.out.println("Selected spacecraft: " + AddSpacecrafts.spacecraftList.get(Integer.parseInt(selection)).name);
+        SeeSpacecrafts.getIndexCounter();
 
         //Executing the selected action according to the user selection
         switch (action) {

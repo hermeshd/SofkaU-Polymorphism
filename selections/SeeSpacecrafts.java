@@ -9,9 +9,11 @@ public class SeeSpacecrafts {
     
     //Method to see all the currently stored spacecrafts
     //Result is formatted in a table for better user readability
+    public static int i; //Initialize index counter for the table
+
     public static void seeSpacecrafts() throws NumberFormatException, InterruptedException {
 
-        int i = 0; //Index counter for the table
+        i = 0; //Reset counter each time the function is called
 
         getLongestString(); //Calls the method to actively find the longest String in each column and size the table accordingly
 
@@ -63,5 +65,10 @@ public class SeeSpacecrafts {
         if (Collections.max(propellants, Comparator.comparing(String::length)).length() > 10) {
             maxStringPropellants = Collections.max(propellants, Comparator.comparing(String::length)).length();
         }
+    }
+
+    public static int getIndexCounter(){
+        System.out.println(i-1);
+        return i-1;
     }
 }
