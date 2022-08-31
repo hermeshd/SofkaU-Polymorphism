@@ -19,11 +19,11 @@ public class Unmanned extends Spacecraft {
 
     @Override
     public void propulse() {
-        System.out.println("Turning on the ion thrusters and adjusting orbit");
-        System.out.println("Fuel left (energy): " + (propellantAmount - 10));
+        System.out.println("\nTurning on the ion thrusters and adjusting orbit");
+        System.out.println("Fuel left (energy): " + (propellantAmount - 10) + "\n");
     }
     
     public void landing() {
-        System.out.println("Unmanned spacecrafts don't really land :s (Unless it's a lander or a rover)");
+        System.out.println("\nUnmanned spacecrafts don't really land :s (Unless it's a lander or a rover)");
     }
 }

@@ -9,7 +9,7 @@ public class AddSpacecrafts {
     static Scanner input = new Scanner(System.in);
 
     //Method to add spacecrafts depending on user input
-    public static void addSpacecrafts() {
+    public static void addSpacecrafts() throws NumberFormatException, InterruptedException {
 
         //Ask the user for the type of spacecraft to add
         System.out.println("Enter the desired type of spacecraft: "
@@ -18,15 +18,23 @@ public class AddSpacecrafts {
                             +   "\n3. Unmanned"
                             +   "\n4. Exit");
         String selection = input.nextLine();
-
+        String name = null;
+        String country = null;
+        String propellant = null;
+        
         //User selection menu
-        System.out.println("Enter name of the spacecraft: ");
-            String name = input.nextLine();
-        System.out.println("Enter country or origin: ");
-            String country = input.nextLine();
-        System.out.println("Enter propellant type: ");
-            String propellant = input.nextLine();
-            
+        if (selection.equals("4")) {
+            System.exit(0);
+        } else {
+            System.out.print("\n");
+            System.out.println("Enter name of the spacecraft: ");
+                name = input.nextLine();
+            System.out.println("Enter country or origin: ");
+                country = input.nextLine();
+            System.out.println("Enter propellant type: ");
+                propellant = input.nextLine();
+        }
+
         //Evaluate user selection and add spacecraft according to the type
         switch (selection) {
 
@@ -45,5 +53,10 @@ public class AddSpacecrafts {
             default:
                 System.out.println("Invalid option");
         }
+        System.out.println("\nSpacecraft added successfully!");
+        System.out.println("\nPress ENTER to continue...");
+        input.nextLine();
+        System.out.print("\033\143"); //Clear console
+        Assignment.main(null);
     }
 }

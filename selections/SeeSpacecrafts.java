@@ -1,14 +1,17 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class SeeSpacecrafts {
 
-    private static int i;
+    static Scanner input = new Scanner(System.in);
     
     //Method to see all the currently stored spacecrafts
     //Result is formatted in a table for better user readability
-    public static void seeSpacecrafts() {
+    public static void seeSpacecrafts() throws NumberFormatException, InterruptedException {
+
+        int i = 0; //Index counter for the table
 
         getLongestString(); //Calls the method to actively find the longest String in each column and size the table accordingly
 
@@ -25,7 +28,7 @@ public class SeeSpacecrafts {
                     i++, spacecraft.getClass().getSimpleName(), spacecraft.name, spacecraft.countryOfOrigin, spacecraft.propellant); //Get attributes of each spacecraft
             System.out.println();
         }
-        System.out.println(div.repeat(maxStringCountries + maxStringNames + maxStringPropellants + 12 + 5)); //Table separator, yet again
+        System.out.println(div.repeat(maxStringCountries + maxStringNames + maxStringPropellants + 12 + 5)); //Table separator, yet again       
     }
 
     //Variables to store the longest stored String of each attribute, the default values are the lengths of the table headers

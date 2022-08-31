@@ -10,12 +10,13 @@ public class UseSpacecrafts {
 
         System.out.println("Type the index of the spacecraft you want to interact with: ");
         String selection = input.nextLine(); //User input to select one spacecraft to interact with
+        System.out.print("\033\143"); //Clear console
         System.out.println("The spacecraft you selected is: " + AddSpacecrafts.spacecraftList.get(Integer.parseInt(selection)).name);
         System.out.println("\n"); //Confirm to the user the selected spacecraft
         String question = "What do you want to do with this spacecraft?: ";
         String typeOfSpacecraft = AddSpacecrafts.spacecraftList.get(Integer.parseInt(selection)).getClass().getSimpleName(); //Store the type of the spacecraft in a variable
 
-        //Available options are based on the type of spacecraft selected
+        //Submenu with available options are based on the type of spacecraft selected
         switch (typeOfSpacecraft) {
             case "Shuttle":
                 question = question + "\n1. Launch it \n2. Land it \n3. Launch it and then land it"; //The shuttles are the only type of spacecraft with 3 available actions
@@ -32,6 +33,8 @@ public class UseSpacecrafts {
 
         System.out.println(question); //Display the question + the corresponding options
         String action = input.nextLine(); //Getting user input
+        System.out.print("\033\143"); //Clear console
+        System.out.println("Selected spacecraft: " + AddSpacecrafts.spacecraftList.get(Integer.parseInt(selection)).name);
 
         //Executing the selected action according to the user selection
         switch (action) {
@@ -48,5 +51,9 @@ public class UseSpacecrafts {
                 System.out.println("Invalid option");
                 break;
         }
+        System.out.println("Press ENTER to continue...");
+        input.nextLine();
+        System.out.print("\033\143"); //Clear console
+        Assignment.main(null);
     }
 }
