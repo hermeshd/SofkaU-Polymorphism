@@ -6,6 +6,7 @@ public class Manned extends Spacecraft {
         this.name = name;
         this.countryOfOrigin = originCountry;
         this.propellant = propellant;
+        this.propellantAmount = 100;
     }
 
     public static void setSample() {
@@ -20,7 +21,12 @@ public class Manned extends Spacecraft {
     @Override
     public void propulse() {
         System.out.println("\nUsed some cold gas to manuever the ship!");
-        System.out.println("Fuel left (RCS): " + (propellantAmount - 10) + "\n");
+        this.propellantAmount = this.propellantAmount - 10;
+        if (this.propellantAmount >= 0) {
+            System.out.println("Fuel left (RCS): " + this.propellantAmount + "\n");
+        } else {
+            System.out.println("Oh no! " + this.name + " has ran out of fuel");
+        }
     }
 
     @Override

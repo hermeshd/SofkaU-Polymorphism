@@ -21,7 +21,12 @@ public class Unmanned extends Spacecraft {
     @Override
     public void propulse() {
         System.out.println("\nTurning on the ion thrusters and adjusting orbit");
-        System.out.println("Fuel left (energy): " + (this.propellantAmount - 10) + "\n");
+        this.propellantAmount = this.propellantAmount - 10;
+        if (this.propellantAmount >= 0) {
+            System.out.println("Fuel left (energy): " + this.propellantAmount + "\n");
+        } else {
+            System.out.println("Oh no! " + this.name + " has ran out of fuel");
+        }
     }
     
     public void landing() {

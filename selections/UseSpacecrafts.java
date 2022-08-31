@@ -55,7 +55,6 @@ public class UseSpacecrafts {
         String action = input.nextLine(); //Getting user input
         System.out.print("\033\143"); //Clear console
         System.out.println("Selected spacecraft: " + AddSpacecrafts.spacecraftList.get(Integer.parseInt(selection)).name);
-        SeeSpacecrafts.getIndexCounter();
 
         //Executing the selected action according to the user selection
         switch (action) {
