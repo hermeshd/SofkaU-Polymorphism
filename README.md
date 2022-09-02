@@ -53,4 +53,4 @@ Similarly, the program does not contain concepts or methods that would have made
 
 ## License
 
-You are free to use this program as you like. This project is licensed under the terms of the [MIT](https://github.com/IgorAntun/node-chat/blob/master/LICENSE) license.
+You are free to use this program as you like. This project is licensed under the terms of the [MIT](https://github.com/IgorAntun/node-chat/blob/master/LICENSE) license. 
